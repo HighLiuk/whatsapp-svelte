@@ -7,13 +7,11 @@ const chatStore = () => {
       id: 0,
       name: "Homer Simpson",
       imgUrl: "/homer.jpg",
-      verified: false,
     },
     {
       id: 1,
       name: "Bart Simpson",
       imgUrl: "/bart.jpg",
-      verified: false,
     },
   ];
 

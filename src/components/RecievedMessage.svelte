@@ -11,7 +11,7 @@
     >
       <div
         class="h-6 rounded bg-base-100 -rotate-45 transform origin-top-left drop-shadow-2xl"
-      />
+      ></div>
     </div>
   {/if}
   <p class="text-sm px-1">

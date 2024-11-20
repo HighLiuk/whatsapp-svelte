@@ -2,7 +2,6 @@ export type Chat = {
   id: number;
   name: string;
   imgUrl: string;
-  verified: boolean;
 };
 
 export type Message = {

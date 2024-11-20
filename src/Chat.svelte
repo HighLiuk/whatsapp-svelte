@@ -1,11 +1,6 @@
 <script lang="ts">
   import { messageStore } from "./stores/messageStore";
   import LeftArrowIcon from "./components/LeftArrowIcon.svelte";
-  import VideoCallIcon from "./components/VideoCallIcon.svelte";
-  import PhoneIcon from "./components/PhoneIcon.svelte";
-  import VerticalDotsIcon from "./components/VerticalDotsIcon.svelte";
-  import MicIcon from "./components/MicIcon.svelte";
-  import CheckBadgeIcon from "./components/CheckBadgeIcon.svelte";
   import ReceivedMessage from "./components/RecievedMessage.svelte";
   import SentMessage from "./components/SentMessage.svelte";
   import type { Chat } from "./types";
@@ -22,22 +17,16 @@
       <a href={"javascript:void(0)"} on:click={onClose}>
         <LeftArrowIcon />
       </a>
+
       <div class="avatar">
         <div class="w-7 rounded-full">
           <img alt="homer" src={chat.imgUrl} />
         </div>
       </div>
+
       <div class="flex items-center gap-1">
         <p class="font-bold ml-1 text-sm">{chat.name}</p>
-        {#if chat.verified}
-          <CheckBadgeIcon />
-        {/if}
       </div>
-    </div>
-    <div class="flex flex-row items-center gap-2 text-base-100 px-2 py-3">
-      <VideoCallIcon />
-      <PhoneIcon />
-      <VerticalDotsIcon />
     </div>
   </div>
 
@@ -72,10 +61,5 @@
     >
       <p class="text-base-content/70 text-sm">Message</p>
     </div>
-    <button
-      class="btn-sm h-10 w-10 btn btn-primary btn-circle bg-primary shadow"
-    >
-      <MicIcon />
-    </button>
   </div>
 </div>

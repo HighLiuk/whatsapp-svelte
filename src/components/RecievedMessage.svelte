@@ -17,5 +17,5 @@
   <p class="text-sm px-1">
     {text}
   </p>
-  <p class="text-right text-xs text-base-content/70">{time}</p>
+  <p class="text-right text-xs text-base-content/70 select-none">{time}</p>
 </div>

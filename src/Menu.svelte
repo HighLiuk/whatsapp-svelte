@@ -7,7 +7,9 @@
 
 <div class="h-full w-full bg-base-100 flex flex-col relative">
   <div class="bg-primary pt-6">
-    <div class="text-base-100 p-2 font-bold ml-1 text-sm">WhatsApp</div>
+    <div class="text-base-100 p-2 font-bold ml-1 text-sm select-none">
+      WhatsApp
+    </div>
   </div>
 
   <div class="flex flex-col divide-y w-full">
@@ -22,7 +24,7 @@
             <img alt={chat.name} src={chat.imgUrl} />
           </div>
         </div>
-        <p class="font-bold ml-1 text-sm">{chat.name}</p>
+        <p class="font-bold ml-1 text-sm select-none">{chat.name}</p>
       </a>
     {/each}
   </div>

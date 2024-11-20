@@ -25,7 +25,7 @@
       </div>
 
       <div class="flex items-center gap-1">
-        <p class="font-bold ml-1 text-sm">{chat.name}</p>
+        <p class="font-bold ml-1 text-sm select-none">{chat.name}</p>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
     <div
       class="h-10 flex-1 flex items-center rounded-full bg-base-100 shadow p-3"
     >
-      <p class="text-base-content/70 text-sm">Message</p>
+      <p class="text-base-content/70 text-sm select-none">Message</p>
     </div>
   </div>
 </div>

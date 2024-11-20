@@ -1,20 +1,16 @@
 <script>
   import { slide } from "svelte/transition";
-  import { chatListStore } from "../../stores/chatListStore";
-  import { messageStore } from "../../stores/messageStore";
-  import LeftArrowIcon from "../../components/LeftArrowIcon.svelte";
-  import VideoCallIcon from "../../components/VideoCallIcon.svelte";
-  import PhoneIcon from "../../components/PhoneIcon.svelte";
-  import VerticalDotsIcon from "../../components/VerticalDotsIcon.svelte";
-  import MicIcon from "../../components/MicIcon.svelte";
-  import CheckBadgeIcon from "../../components/CheckBadgeIcon.svelte";
-  import ReceivedMessage from "../../components/RecievedMessage.svelte";
-  import SentMessage from "../../components/SentMessage.svelte";
+  import { chatListStore } from "./stores/chatListStore";
+  import { messageStore } from "./stores/messageStore";
+  import LeftArrowIcon from "./components/LeftArrowIcon.svelte";
+  import VideoCallIcon from "./components/VideoCallIcon.svelte";
+  import PhoneIcon from "./components/PhoneIcon.svelte";
+  import VerticalDotsIcon from "./components/VerticalDotsIcon.svelte";
+  import MicIcon from "./components/MicIcon.svelte";
+  import CheckBadgeIcon from "./components/CheckBadgeIcon.svelte";
+  import ReceivedMessage from "./components/RecievedMessage.svelte";
+  import SentMessage from "./components/SentMessage.svelte";
 </script>
-
-<svelte:head>
-  <title>{$chatListStore[0].name} • WhatsApp</title>
-</svelte:head>
 
 <div in:slide class="h-full w-full bg-accent flex flex-col">
   <div
@@ -26,7 +22,7 @@
       </a>
       <div class="avatar">
         <div class="w-7 rounded-full">
-          <img alt="homer" src="/homer2.jpg" />
+          <img alt="homer" src="/homer.jpg" />
         </div>
       </div>
       <div class="flex items-center gap-1">
@@ -50,7 +46,7 @@
     {#each $messageStore as message, idx (message.text + message.time)}
       <!-- Add space between received and sent messages -->
       {#if idx === 0 || message.received !== $messageStore[idx - 1].received}
-        <div class="p-1" />
+        <div class="p-1"></div>
       {/if}
       {#if message.received}
         <ReceivedMessage

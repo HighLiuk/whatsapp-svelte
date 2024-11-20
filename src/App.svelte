@@ -1,9 +1,8 @@
 <script lang="ts">
+  import Layout from "./Layout.svelte";
+  import Menu from "./Menu.svelte";
 </script>
 
-<main>
-  <!--  -->
-</main>
-
-<style>
-</style>
+<Layout>
+  <Menu />
+</Layout>

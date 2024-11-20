@@ -1,13 +1,9 @@
 <script>
-  import { chatListStore } from "../stores/chatListStore";
-  import SearchIcon from "../components/SearchIcon.svelte";
-  import VerticalDotsIcon from "../components/VerticalDotsIcon.svelte";
-  import ChatIcon from "../components/ChatIcon.svelte";
+  import { chatListStore } from "./stores/chatListStore";
+  import SearchIcon from "./components/SearchIcon.svelte";
+  import VerticalDotsIcon from "./components/VerticalDotsIcon.svelte";
+  import ChatIcon from "./components/ChatIcon.svelte";
 </script>
-
-<svelte:head>
-  <title>Home • WhatsApp</title>
-</svelte:head>
 
 <div class="h-full w-full bg-base-100 flex flex-col relative">
   <div class="w-full bg-primary flex flex-col pt-6">

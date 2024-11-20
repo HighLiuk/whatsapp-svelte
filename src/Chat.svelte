@@ -10,11 +10,13 @@
 </script>
 
 <div class="h-full w-full bg-accent flex flex-col">
-  <div
-    class="w-full bg-primary flex flex-row justify-between items-center pt-6 overflow-hidden"
-  >
-    <div class="flex flex-row items-center gap-1 text-base-100 px-2 py-3">
-      <a href={"javascript:void(0)"} on:click={onClose}>
+  <div class="bg-primary pt-6">
+    <div class="flex flex-row gap-1 text-base-100 p-2">
+      <a
+        href={"javascript:void(0)"}
+        class="w-7 rounded-full flex justify-center items-center"
+        on:click={onClose}
+      >
         <LeftArrowIcon />
       </a>
 
@@ -32,27 +34,35 @@
 
   <!-- Chat Area -->
   <div
-    class="flex flex-col gap-0 h-full flex-initial overflow-y-scroll box-content pr-6 w-full"
+    class="flex flex-col-reverse gap-0 h-full flex-initial overflow-y-scroll box-content
+  pr-6 w-full pb-1"
   >
-    {#each $messageStore as message, idx (message.text + message.time)}
+    {#each $messageStore as message, idx (message.id)}
       <!-- Add space between received and sent messages -->
-      {#if idx === 0 || message.received !== $messageStore[idx - 1].received}
+      {#if idx > 0 && message.received !== $messageStore[idx - 1].received}
         <div class="p-1"></div>
       {/if}
+
       {#if message.received}
         <ReceivedMessage
           text={message.text}
-          first={message.first}
+          first={idx === $messageStore.length - 1 ||
+            (idx < $messageStore.length - 1 &&
+              message.received !== $messageStore[idx + 1].received)}
           time={message.time}
         />
       {:else}
         <SentMessage
           text={message.text}
+          first={idx === $messageStore.length - 1 ||
+            (idx < $messageStore.length - 1 &&
+              message.received !== $messageStore[idx + 1].received)}
           time={message.time}
-          first={message.first}
         />
       {/if}
     {/each}
+
+    <div class="p-1"></div>
   </div>
 
   <div class="p-3 flex flex-row gap-1.5">

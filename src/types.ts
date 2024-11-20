@@ -9,5 +9,4 @@ export type Message = {
   text: string;
   time: string;
   received: boolean;
-  first: boolean;
 };

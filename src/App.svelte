@@ -1,7 +1,5 @@
 <script lang="ts">
-  import Chat from "./Chat.svelte";
-  import Menu from "./Menu.svelte";
-  import Phone from "./Phone.svelte";
+  import { Chat, Menu, Phone } from "./components";
   import { currentChat } from "./stores/currentChat";
 </script>
 

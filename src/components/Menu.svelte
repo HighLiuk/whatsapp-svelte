@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { chatListStore } from "./stores/chatListStore";
-  import type { Chat } from "./types";
+  import { chatListStore } from "../stores/chatListStore";
+  import type { Chat } from "../types";
 
   export let onChatClick: (chat: Chat) => void;
 </script>

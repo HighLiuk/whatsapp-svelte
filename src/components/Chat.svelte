@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { messageStore } from "./stores/messageStore";
-  import LeftArrowIcon from "./components/LeftArrowIcon.svelte";
-  import ReceivedMessage from "./components/RecievedMessage.svelte";
-  import SentMessage from "./components/SentMessage.svelte";
-  import type { Chat } from "./types";
+  import { messageStore } from "../stores/messageStore";
+  import { LeftArrowIcon, ReceivedMessage, SentMessage } from "./Chat";
+  import type { Chat } from "../types";
 
   export let chat: Chat;
   export let onClose: () => void;

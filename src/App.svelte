@@ -1,12 +1,14 @@
 <script lang="ts">
   import { Chat, Menu, Phone } from "./components";
-  import { currentChat } from "./stores/currentChat";
+  import type { Chat as ChatType } from "./types";
+
+  let chat: ChatType | null = null;
 </script>
 
 <Phone>
-  {#if $currentChat}
-    <Chat chat={$currentChat} onClose={() => ($currentChat = null)} />
+  {#if chat}
+    <Chat {chat} onClose={() => (chat = null)} />
   {:else}
-    <Menu onChatClick={(chat) => ($currentChat = chat)} />
+    <Menu onChatClick={(newChat) => (chat = newChat)} />
   {/if}
 </Phone>

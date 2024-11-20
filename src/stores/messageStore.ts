@@ -1,7 +1,8 @@
 import { writable } from "svelte/store";
+import type { Message } from "../types";
 
 const createMessageStore = () => {
-  const messageList = [
+  const messageList: Message[] = [
     {
       id: 0,
       text: "My favorite quotes of Homer Simpson",
@@ -30,8 +31,9 @@ const createMessageStore = () => {
   return {
     subscribe,
     set,
-    addMessage: (message) => update((data) => [...data, message]),
-    removeMessage: (id) => update((data) => data.filter((u) => u.id !== id)),
+    addMessage: (message: Message) => update((data) => [...data, message]),
+    removeMessage: (id: number) =>
+      update((data) => data.filter((u) => u.id !== id)),
   };
 };
 

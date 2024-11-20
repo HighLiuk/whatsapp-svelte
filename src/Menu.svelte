@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
   import { chatListStore } from "./stores/chatListStore";
   import SearchIcon from "./components/SearchIcon.svelte";
   import VerticalDotsIcon from "./components/VerticalDotsIcon.svelte";
   import ChatIcon from "./components/ChatIcon.svelte";
+  import type { Chat } from "./types";
+
+  export let onChatClick: (chat: Chat) => void;
 </script>
 
 <div class="h-full w-full bg-base-100 flex flex-col relative">
@@ -16,20 +19,15 @@
         <VerticalDotsIcon />
       </div>
     </div>
-    <div class="tabs font-medium w-full grid grid-cols-3">
-      <a
-        href="#!"
-        class="tab tab-bordered tab-active !border-base-100 text-base-100 text-xs"
-        >Chat</a
-      >
-      <a href="#!" class="tab tab-bordered text-base-100/70 text-xs">Status</a>
-      <a href="#!" class="tab tab-bordered text-base-100/70 text-xs">Calls</a>
-    </div>
   </div>
 
   <div class="flex flex-col divide-y w-full">
     {#each $chatListStore as chat (chat.name)}
-      <a href="/chat" class="flex flex-row gap-2 w-full items-center p-3">
+      <a
+        href={"javascript:void(0)"}
+        on:click={() => onChatClick(chat)}
+        class="flex flex-row gap-2 w-full items-center p-3"
+      >
         <div class="avatar">
           <div class="w-10 rounded-full">
             <img alt={chat.name} src={chat.imgUrl} />

@@ -1,7 +1,8 @@
 import { writable } from "svelte/store";
+import type { Chat } from "../types";
 
 const chatStore = () => {
-  const chatList = [
+  const chatList: Chat[] = [
     {
       id: 0,
       name: "Homer Simpson",
@@ -21,8 +22,9 @@ const chatStore = () => {
   return {
     subscribe,
     set,
-    addUser: (user) => update((data) => [...data, user]),
-    removeUser: (id) => update((data) => data.filter((u) => u.id !== id)),
+    addUser: (user: Chat) => update((data) => [...data, user]),
+    removeUser: (id: number) =>
+      update((data) => data.filter((u) => u.id !== id)),
   };
 };
 

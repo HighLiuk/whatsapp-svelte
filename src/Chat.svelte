@@ -1,6 +1,4 @@
-<script>
-  import { slide } from "svelte/transition";
-  import { chatListStore } from "./stores/chatListStore";
+<script lang="ts">
   import { messageStore } from "./stores/messageStore";
   import LeftArrowIcon from "./components/LeftArrowIcon.svelte";
   import VideoCallIcon from "./components/VideoCallIcon.svelte";
@@ -10,24 +8,28 @@
   import CheckBadgeIcon from "./components/CheckBadgeIcon.svelte";
   import ReceivedMessage from "./components/RecievedMessage.svelte";
   import SentMessage from "./components/SentMessage.svelte";
+  import type { Chat } from "./types";
+
+  export let chat: Chat;
+  export let onClose: () => void;
 </script>
 
-<div in:slide class="h-full w-full bg-accent flex flex-col">
+<div class="h-full w-full bg-accent flex flex-col">
   <div
     class="w-full bg-primary flex flex-row justify-between items-center pt-6 overflow-hidden"
   >
     <div class="flex flex-row items-center gap-1 text-base-100 px-2 py-3">
-      <a href="/">
+      <a href={"javascript:void(0)"} on:click={onClose}>
         <LeftArrowIcon />
       </a>
       <div class="avatar">
         <div class="w-7 rounded-full">
-          <img alt="homer" src="/homer.jpg" />
+          <img alt="homer" src={chat.imgUrl} />
         </div>
       </div>
       <div class="flex items-center gap-1">
-        <p class="font-bold ml-1 text-sm">{$chatListStore[0].name}</p>
-        {#if $chatListStore[0].verified}
+        <p class="font-bold ml-1 text-sm">{chat.name}</p>
+        {#if chat.verified}
           <CheckBadgeIcon />
         {/if}
       </div>

@@ -5,4 +5,3 @@
 </script>
 
 {@html style}
-<slot />

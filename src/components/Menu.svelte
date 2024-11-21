@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { chatListStore } from "../stores/chatListStore";
   import type { Chat } from "../types";
   import blank from "../assets/blank.svg";
 
   export let onChatClick: (chat: Chat) => void;
+  export let chats: Chat[] = [];
 </script>
 
 <div class="h-full w-full bg-base-100 flex flex-col relative">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="flex flex-col divide-y w-full">
-    {#each $chatListStore as chat (chat.id)}
+    {#each chats as chat (chat.id)}
       <a
         href={"javascript:void(0)"}
         on:click={() => onChatClick(chat)}

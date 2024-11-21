@@ -1,11 +1,61 @@
 <script lang="ts">
-  import { messageStore } from "../stores/messageStore";
   import { LeftArrowIcon, ReceivedMessage, SentMessage } from "./Chat";
-  import type { Chat } from "../types";
+  import type { Chat, Message } from "../types";
   import blank from "../assets/blank.svg";
 
   export let chat: Chat;
   export let onClose: () => void;
+
+  const messages: Message[] = [
+    {
+      id: 0,
+      text: "My favorite quotes of Homer Simpson",
+      time: "3:14 PM",
+      received: true,
+    },
+    {
+      id: 1,
+      text: "Maybe, just once, someone will call me 'Sir', without adding 'you are making a scene'.",
+      time: "3:15 PM",
+      received: true,
+    },
+    {
+      id: 2,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: false,
+    },
+    {
+      id: 3,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: false,
+    },
+    {
+      id: 4,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: true,
+    },
+    {
+      id: 5,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: true,
+    },
+    {
+      id: 6,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: true,
+    },
+    {
+      id: 7,
+      text: "Doh!",
+      time: "3:16 PM",
+      received: false,
+    },
+  ];
 </script>
 
 <div class="h-full w-full bg-accent flex flex-col">
@@ -36,26 +86,26 @@
     class="flex flex-col-reverse gap-0 h-full flex-initial overflow-y-scroll box-content
   pr-6 w-full pb-1"
   >
-    {#each $messageStore as message, idx (message.id)}
+    {#each messages as message, idx (message.id)}
       <!-- Add space between received and sent messages -->
-      {#if idx > 0 && message.received !== $messageStore[idx - 1].received}
+      {#if idx > 0 && message.received !== messages[idx - 1].received}
         <div class="p-1"></div>
       {/if}
 
       {#if message.received}
         <ReceivedMessage
           text={message.text}
-          first={idx === $messageStore.length - 1 ||
-            (idx < $messageStore.length - 1 &&
-              message.received !== $messageStore[idx + 1].received)}
+          first={idx === messages.length - 1 ||
+            (idx < messages.length - 1 &&
+              message.received !== messages[idx + 1].received)}
           time={message.time}
         />
       {:else}
         <SentMessage
           text={message.text}
-          first={idx === $messageStore.length - 1 ||
-            (idx < $messageStore.length - 1 &&
-              message.received !== $messageStore[idx + 1].received)}
+          first={idx === messages.length - 1 ||
+            (idx < messages.length - 1 &&
+              message.received !== messages[idx + 1].received)}
           time={message.time}
         />
       {/if}

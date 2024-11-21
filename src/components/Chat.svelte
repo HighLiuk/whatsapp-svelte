@@ -38,6 +38,9 @@
     class="flex flex-col-reverse gap-0 h-full flex-initial overflow-y-scroll box-content
   pr-6 w-full pb-1"
   >
+    <!-- div that takes remaining space -->
+    <div class="flex-1"></div>
+
     {#each messages as message, idx (message.id)}
       <!-- Add space between received and sent messages -->
       {#if idx > 0 && message.received !== messages[idx - 1].received}

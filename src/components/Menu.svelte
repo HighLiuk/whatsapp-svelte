@@ -1,6 +1,7 @@
 <script lang="ts">
   import { chatListStore } from "../stores/chatListStore";
   import type { Chat } from "../types";
+  import blank from "../assets/blank.svg";
 
   export let onChatClick: (chat: Chat) => void;
 </script>
@@ -23,7 +24,7 @@
       >
         <div class="avatar">
           <div class="w-10 rounded-full">
-            <img alt={chat.name} src={chat.imgUrl} />
+            <img alt={chat.name} src={blank} />
           </div>
         </div>
         <p class="font-bold ml-1 text-sm select-none">{chat.name}</p>

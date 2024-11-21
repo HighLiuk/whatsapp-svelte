@@ -2,6 +2,7 @@
   import { messageStore } from "../stores/messageStore";
   import { LeftArrowIcon, ReceivedMessage, SentMessage } from "./Chat";
   import type { Chat } from "../types";
+  import blank from "../assets/blank.svg";
 
   export let chat: Chat;
   export let onClose: () => void;
@@ -20,7 +21,7 @@
 
       <div class="avatar">
         <div class="w-7 rounded-full">
-          <img alt="homer" src={chat.imgUrl} />
+          <img alt={chat.name} src={blank} />
         </div>
       </div>
 

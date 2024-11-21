@@ -28,7 +28,7 @@
       </div>
 
       <div class="flex items-center gap-1">
-        <p class="font-bold ml-1 text-sm select-none">{chat.name}</p>
+        <p class="ml-1 text-sm select-none">{chat.name}</p>
       </div>
     </div>
   </div>

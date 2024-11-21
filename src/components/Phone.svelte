@@ -1,4 +1,4 @@
-<div class="mockup-phone">
+<div class="mockup-phone" data-theme="mytheme">
   <div class="camera"></div>
 
   <div class="display">

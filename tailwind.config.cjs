@@ -7,9 +7,6 @@ module.exports = {
       width: {
         18: "4.5rem",
       },
-      fontFamily: {
-        sans: ["Rubik"],
-      },
     },
   },
   plugins: [require("daisyui")],
@@ -38,6 +35,7 @@ module.exports = {
           warning: colors.amber[500],
           error: colors.rose[500],
         },
+        other: {},
       },
     ],
   },

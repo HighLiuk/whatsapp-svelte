@@ -6,7 +6,7 @@
   export let chat: Chat;
   export let onClose: () => void;
 
-  $: messages = chat.messages;
+  $: messages = [...chat.messages].reverse();
   $: count = messages.length;
 </script>
 

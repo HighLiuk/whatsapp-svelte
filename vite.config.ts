@@ -9,4 +9,12 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    lib: {
+      entry: "src/App.svelte",
+      name: "WhatsappPhone",
+      formats: ["umd"],
+      fileName: () => "whatsapp-phone.js",
+    },
+  },
 });

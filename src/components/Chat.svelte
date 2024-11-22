@@ -41,7 +41,7 @@
     <!-- div that takes remaining space -->
     <div class="flex-1"></div>
 
-    {#each messages as message, idx (message.id)}
+    {#each messages as message, idx}
       <!-- Add space between received and sent messages -->
       {#if idx > 0 && message.received !== messages[idx - 1].received}
         <div class="p-1"></div>

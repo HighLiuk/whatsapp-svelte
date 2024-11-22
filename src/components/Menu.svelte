@@ -16,7 +16,7 @@
   </div>
 
   <div class="flex flex-col divide-y w-full overflow-y-scroll">
-    {#each chats as chat (chat.id)}
+    {#each chats as chat}
       <a
         href={"javascript:void(0)"}
         on:click={() => onChatClick(chat)}

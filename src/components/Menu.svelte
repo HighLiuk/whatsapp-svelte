@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col divide-y w-full">
+  <div class="flex flex-col divide-y w-full overflow-y-scroll">
     {#each chats as chat (chat.id)}
       <a
         href={"javascript:void(0)"}
